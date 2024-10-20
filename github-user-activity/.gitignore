@@ -1,0 +1,31 @@
+# Go-related ignores
+/bin/
+/pkg/
+/vendor/
+
+# Logs
+*.log
+
+# Editor and IDE-specific ignores
+.idea/
+*.swp
+*.swo
+*.swn
+.vscode/
+*.code-workspace
+
+# OS-specific ignores
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+*.test
+
+# Temporary files
+*.tmp
+*.temp
