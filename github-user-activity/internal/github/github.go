@@ -16,7 +16,20 @@ type GitHubEvent struct {
 	} `json:"repo"`
 }
 
-// FetchGitHubActivity fetches recent GitHub activity for the given user
+// FetchGitHubActivity retrieves the public GitHub events for a specified user.
+//
+// Parameters:
+//   - username: The GitHub username for which to fetch the activity.
+//
+// Returns:
+//   - A slice of GitHubEvent structs containing the user's public events.
+//   - An error if there was an issue fetching or decoding the data.
+//
+// Possible errors:
+//   - If the GitHub API is unreachable.
+//   - If the user is not found (HTTP 404).
+//   - If there is any other HTTP error.
+//   - If there is an error decoding the JSON response.
 func FetchGitHubActivity(username string) ([]GitHubEvent, error) {
 	url := fmt.Sprintf("%s%s/events", baseURL, username)
 	client := http.Client{

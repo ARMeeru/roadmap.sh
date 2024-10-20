@@ -8,7 +8,11 @@ import (
 	"github.com/ARMeeru/github-user-activity/internal/output"
 )
 
-// Execute is the main entry point for the CLI
+// Execute is the entry point for the command-line application.
+// It ensures that a GitHub username is provided as an argument,
+// fetches the user's GitHub activity, and displays it.
+// If no username is provided or an error occurs during fetching,
+// it prints an appropriate message and exits the program.
 func Execute() {
 	// Ensure a username is provided as an argument
 	if len(os.Args) < 2 {
